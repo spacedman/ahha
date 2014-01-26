@@ -11,3 +11,4 @@ Use nvd3 for charts instead of flotr?
 
 Use [FullCalendar](http://arshaw.com/fullcalendar/) for date navigation?
 
+The ubiquitous responsive CSS framework for layout (Bootstrap/Foundation/Gumby/other)
