@@ -1,5 +1,9 @@
+{% extends "content.html" %}
 {% block content %}
-<h1>Login</h1>
+<div class="grid">
+	<div class="col_12" style="margin-top:100px;">
+
+<h1>Please Login</h1>
 <form name="loginform" method="POST">{% csrf_token %}
   {% if next %}
   <input type="hidden" name="next" value="{{ next }}" />
@@ -13,5 +17,7 @@
 </form>
 
 <p>Contact admin for password reset</p>
+</div>
+</div>
 
 {% endblock %}

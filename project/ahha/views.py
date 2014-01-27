@@ -14,6 +14,12 @@ def index(request):
     return render_to_response("index.html",
                               {'login': login}, 
                               context_instance=RequestContext(request))
+
+def test(request):
+    return render_to_response("test.html",
+                              {},
+                              context_instance=RequestContext(request))
+            
     
 def login_user(request):
     if request.method=="POST":
