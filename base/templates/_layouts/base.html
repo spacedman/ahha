@@ -30,7 +30,14 @@
 
   {% compress css %}
   <link rel="stylesheet" href="{% static 'css/app.css' %}">
-  {% block css %}{% endblock %}
+<style>
+{% block css %}
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+{% endblock %}
+</style>
   {% endcompress %}
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
@@ -119,14 +126,6 @@
   {% endcompress %}
   <!-- end scripts -->
 
-  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
 {% endblock %}
 </body>
 </html>
