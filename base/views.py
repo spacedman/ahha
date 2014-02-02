@@ -72,6 +72,7 @@ def hospitalTable(year, month, nearest=True):
             records[d][f]=rnd(getattr(r,f))
     return records
 
+@login_required
 def table(request, year, month):
     data = hospitalTable(year, month, nearest=True)
     return render(request,"base/table.html",{'table': data})
