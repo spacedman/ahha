@@ -39,10 +39,16 @@ def logout(request):
     logout(request)
     return HttpResponseRedirect(".")
 
-@login_required
-@json_view
-def hospital(request, year, month):
+def hospitalTable(year, month, nearest=True):
     
+    def rnd(v):
+        if not v:
+            return v
+        if nearest:
+            return int(round(v))
+        else:
+            return v
+
     month=int(month)
     year = int(year)
 
@@ -63,8 +69,9 @@ def hospital(request, year, month):
     for r in counts:
         d = r.date.day - 1
         for f in fields:
-            records[d][f]=getattr(r,f)
+            records[d][f]=rnd(getattr(r,f))
     return records
 
-def ajaxtest(request):
-    return render(request,"base/ajaxtest.html")
+def table(request, year, month):
+    data = hospitalTable(year, month, nearest=True)
+    return render(request,"base/table.html",{'table': data})
