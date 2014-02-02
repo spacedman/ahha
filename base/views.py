@@ -10,6 +10,9 @@ from jsonview.decorators import json_view
 
 from . import models
 
+import calendar
+import datetime
+
 def home(request):
     """ Default view for the root """
     return render(request, 'base/home.html')
@@ -39,13 +42,29 @@ def logout(request):
 @login_required
 @json_view
 def hospital(request, year, month):
-    print "aaaargh"
+    
+    month=int(month)
+    year = int(year)
 
-    records = models.DailyRecord.objects.filter(
-        date__month=month, date__year=year)[:5].values('date','MedActual', 'SurgActual')
-    for r in records:
-        r['date']=str(r['date'])
-    return list(records)
+    fields = ["MedActual","MedPredict","MedTCI",
+              "SurgActual","SurgPredict","SurgTCI"]
+
+    
+    days = calendar.monthrange(year,month)[1]
+
+    records = list()
+    for d in range(days+1)[1:]:
+        e = {'date': str(datetime.date(year,month,d))}
+        for f in fields:
+            e[f]=None
+        records.append(e)
+
+    counts = models.DailyRecord.objects.filter(date__month=month, date__year=year)
+    for r in counts:
+        d = r.date.day - 1
+        for f in fields:
+            records[d][f]=getattr(r,f)
+    return records
 
 def ajaxtest(request):
     return render(request,"base/ajaxtest.html")
