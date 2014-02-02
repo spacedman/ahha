@@ -8,6 +8,8 @@
 <h1>Both</h1>
 {% include "base/table_macro.html" with surgical=True medical=True %}
 
+{% include "base/monthnav.html" %}
+
 <h1>Surgical</h1>
 
 {% include "base/table_macro.html" with surgical=True medical=False %}

@@ -75,4 +75,4 @@ def hospitalTable(year, month, nearest=True):
 @login_required
 def table(request, year, month):
     data = hospitalTable(year, month, nearest=True)
-    return render(request,"base/table.html",{'table': data})
+    return render(request,"base/table.html",{'table': data, 'year': year, 'month': month})

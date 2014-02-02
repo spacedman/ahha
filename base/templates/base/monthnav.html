@@ -1,0 +1,12 @@
+<ul>
+{% if month == "01" or month == "1"%}
+<li><a href="../../{{year|add:"-1"}}/12">Prev</a></li>
+<li><a href="../../{{year}}/{{month|add:"1"}}">Next</a></li>
+{% elif month == "12" %}
+<li><a href="../../{{year}}/{{month|add:"-1"}}">Prev</a></li>
+<li><a href="../../{{year|add:"1"}}/01">Next</a></li>
+{% else %}
+<li><a href="../../{{year}}/{{month|add:"-1"}}">Prev</a></li>
+<li><a href="../../{{year}}/{{month|add:"1"}}">Next</a></li>
+{% endif %}
+</ul>
