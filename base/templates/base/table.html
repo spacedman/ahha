@@ -4,24 +4,18 @@
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-<table>
-<tr><th></th><th colspan="3">Medical</th><th colspan="3">Surgical</th></tr>
-<tr><th>Date</th>
-<th>Actual</th><th>Predicted</th><th>TCI</th>
-<th>Actual</th><th>Predicted</th><th>TCI</th>
-</tr>
-{% for row in table %}
-<tr>
-<td>{{row.date}}</td>
-<td>{{row.MedActual|default_if_none:"-"}}</td>
-<td>{{row.MedPredict|default_if_none:"-"}}</td>
-<td>{{row.MedTCI|default_if_none:"-"}}</td>
-<td>{{row.SurgActual|default_if_none:"-"}}</td>
-<td>{{row.SurgPredict|default_if_none:"-"}}</td>
-<td>{{row.SurgTCI|default_if_none:"-"}}</td>
-</tr>
-{% endfor %}
-</table>
+
+<h1>Both</h1>
+{% include "base/table_macro.html" with surgical=True medical=True %}
+
+<h1>Surgical</h1>
+
+{% include "base/table_macro.html" with surgical=True medical=False %}
+
+<h1>Medical</h1>
+{% include "base/table_macro.html" with surgical=False medical=True %}
+
+
 </div>
 </div>
 </div>
