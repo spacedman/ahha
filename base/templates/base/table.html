@@ -1,9 +1,8 @@
-{% extends "_layouts/base.html" %}
+{% extends "base/gumby.html" %}
 
 {% block content %}
-<div class="container">
 <div class="row">
-<div class="col-md-12">
+<div class="twelve columns">
 
 <h1>Both</h1>
 {% include "base/table_macro.html" with surgical=True medical=True %}
@@ -18,7 +17,6 @@
 {% include "base/table_macro.html" with surgical=False medical=True %}
 
 
-</div>
 </div>
 </div>
 

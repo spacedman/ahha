@@ -1,4 +1,4 @@
-<table>
+<table class="neat sectiontable">
 <tr><th></th>
 {% if medical %}
 <th colspan="3">Medical</th>
@@ -16,7 +16,7 @@
 {% endif %}
 </tr>
 {% for row in table %}
-<tr>
+<tr class="{{row.day}} {{row.wkend}}">
 <td>{{row.date}}</td>
 {% if medical %}
 <td>{{row.MedActual|default_if_none:"-"}}</td>

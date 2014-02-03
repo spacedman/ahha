@@ -60,7 +60,11 @@ def hospitalTable(year, month, nearest=True):
 
     records = list()
     for d in range(days+1)[1:]:
-        e = {'date': str(datetime.date(year,month,d))}
+        theDate = datetime.date(year,month,d)
+        e = {'date': theDate,
+             'day': theDate.strftime("%A").lower(),
+             'wkend': ("weekday","weekend")[theDate.weekday()>=5] # Mon=0, Sat=5, Sun=6
+             }
         for f in fields:
             e[f]=None
         records.append(e)
