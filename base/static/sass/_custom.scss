@@ -1,0 +1,138 @@
+// Your custom SCSS should be written here...
+//
+// Alder Hey project
+//
+$nhsred: #ef2827;
+$nhsblue: #1572b8;
+$nhsdarkblue: #21418e;
+
+div.dashplot {height: 200px;}
+div#detailplot {
+  height: 400px;
+}
+
+table.neat{
+  margin-top: 0.5em;
+  th {background-color: $nhsblue;border-bottom: 1px solid black;
+        border-top: 2px solid #333;
+     }
+  td,th {padding: 0 0 0 5px;}
+  tr.weekend td {background-color: #DDD;}
+  }
+
+table.sectiontable {
+ border: 2px solid gray;
+ tr:first-child {
+ 		background-color: $nhsblue; color: white;
+		td {color: white; padding-right: 0.5em;}
+		}
+ td.sched {font-weight: bold}
+ td,th {text-align: right; padding-right: 0.5em;}
+ td.c50 {background-color: #ebf6fc }
+ td.c95 {background-color: white  }
+ td.c99 {background-color: #ebf6fc }
+ td.low {border-left: 2px solid gray}
+ td.high {border-right: 2px solid gray}
+ td.forecast {font-weight: bold; border-left: 2px solid gray;}
+ tr.saturday td {border-top: 1px solid gray}
+ tr.sunday td {border-bottom: 1px solid gray}
+}
+
+span.details {
+float: right;
+background-color:$nhsred;
+padding-left: 0em;
+padding-right: 1em;
+margin-bottom: 1em;
+border-bottom: 1px solid black;
+border-top: 2px solid #333;
+font-weight: bold;
+color: white;
+ a {color: white}
+ a:hover {text-decoration: underline}
+}
+
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+h1,h2,h3,h4,h5,h6 {
+padding-left: 1em;
+color: white;
+padding-top: 0.25em;
+padding-bottom: 0.25em;
+}
+
+h1,h2,h3 {
+
+border-bottom: 1px solid black;
+border-top: 2px solid #333;
+
+a { color: white}
+a:hover { text-decoration:underline; color: white;}
+
+}
+
+h1 {
+background-color: $nhsred;
+font-size: 200%;
+}
+
+h1.navhead {
+background-color: $nhsblue;
+}
+
+h1.download {
+  background-color: #333;
+  color: black;
+}
+
+h2 {
+background-color: $nhsblue;
+font-size: 200%;
+}
+
+h3 {
+background-color: $nhsblue;
+font-size: 100%;
+margin-top: 0.5em;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+div.flot-tick-label {font-size: 75%; line-height: 100%; margin-bottom: 1em;}
+
+footer {font-size: 75%;}
+
+div.navrooms {
+padding-top: 1em;
+ul{  margin-left: 0;}
+
+li.head {background-color: $nhsred}
+
+li {display: inline-block;
+   padding-top: 0.25em;
+   padding-bottom: 0.45em;
+   padding-right: 1em;
+   padding-left: 1em;
+margin-bottom: 0.5em;
+   font-weight: bold;
+   font-size: 150%;
+   background-color: $nhsblue;
+   border-bottom: 1px solid black;
+   border-top: 2px solid #333;
+   color: white;
+a {color: white}
+a:hover {text-decoration: underline}
+}
+}
+
+ul.desc {
+ padding-left: 1em;
+ list-style-type: disc;
+ li {margin-left: 1em}
+}
+
+
+#copyright {margin-left: 1em}
