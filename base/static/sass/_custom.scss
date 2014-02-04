@@ -14,8 +14,9 @@ div#detailplot {
 table.neat{
   margin-top: 0.5em;
   th {background-color: $nhsblue;border-bottom: 1px solid black;
-        border-top: 2px solid #333;
+        border-top: 2px solid #333; color:white;
      }
+  tr.mainhead th {font-weight: bold;}
   td,th {padding: 0 0 0 5px;}
   tr.weekend td {background-color: #DDD;}
   }
